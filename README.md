@@ -163,8 +163,11 @@ Primeiramente vamos estudar **arquitetura REST**
     *Alguns exemplos comuns de códigos de status HTTP incluem:*
 
     200 OK: Indica que a solicitação foi bem-sucedida.
+
     404 Not Found: Indica que o recurso solicitado não foi encontrado no servidor.
+
     500 Internal Server Error: Indica que ocorreu um erro interno no servidor ao processar a solicitação.
+    
     Esses códigos de status são uma parte importante da comunicação entre cliente e servidor na web, fornecendo informações úteis sobre o resultado das solicitações e ajudando os desenvolvedores a diagnosticar e corrigir problemas em suas aplicações.
 
-    
+
