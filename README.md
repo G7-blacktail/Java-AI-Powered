@@ -74,3 +74,97 @@ Primeiramente vamos estudar **arquitetura REST**
 
             O REST é amplamente utilizado na construção de serviços web e APIs (Application Programming Interfaces), devido à sua simplicidade, flexibilidade e facilidade de uso. Ele se tornou um padrão de facto para a criação de sistemas distribuídos na web, sendo adotado por grandes empresas e organizações em todo o mundo.
 
+    ### Pequena explicação de portas padrões
+
+    1. Telnet:
+
+        Porta Padrão: 23
+        Explicação: O Telnet é um protocolo utilizado para acesso remoto a dispositivos e servidores. A porta 23 é a porta padrão para conexões Telnet, onde os clientes se conectam aos servidores para interagir com eles via linha de comando.
+    2. SMTPS (SMTP Secure):
+        Porta Padrão: 465
+        Explicação: O SMTPS é uma versão segura do protocolo SMTP, que utiliza SSL/TLS para criptografar a comunicação entre o cliente e o servidor de e-mail. A porta 465 é usada para comunicações SMTPS criptografadas.
+    3. IMAP (Internet Message Access Protocol):
+        Porta Padrão: 143
+        Explicação: O IMAP é um protocolo utilizado por clientes de e-mail para acessar e-mails armazenados em servidores de e-mail remotos. A porta 143 é a porta padrão para comunicações IMAP não criptografadas.
+    4. IMAPS (IMAP Secure):
+        Porta Padrão: 993
+        Explicação: O IMAPS é a versão segura do protocolo IMAP, que utiliza SSL/TLS para criptografar a comunicação entre o cliente e o servidor de e-mail. A porta 993 é usada para comunicações IMAPS criptografadas.
+    5. LDAP (Lightweight Directory Access Protocol):
+        Porta Padrão: 389
+        Explicação: O LDAP é um protocolo utilizado para acessar e gerenciar diretórios de informações, como diretórios de usuários e grupos. A porta 389 é a porta padrão para comunicações LDAP não criptografadas.
+    6. LDAPS (LDAP Secure):
+        Porta Padrão: 636
+        Explicação: O LDAPS é a versão segura do protocolo LDAP, que utiliza SSL/TLS para criptografar a comunicação entre o cliente e o servidor LDAP. A porta 636 é usada para comunicações LDAPS criptografadas.
+    7. DNS sobre HTTPS (DoH):
+        Porta Padrão: 443
+        Explicação: O DNS sobre HTTPS é um protocolo que permite que as consultas DNS sejam feitas através do protocolo HTTPS, garantindo assim maior privacidade e segurança. Ele utiliza a porta 443 para comunicações DoH.
+    7. DNS sobre TLS (DoT):
+        Porta Padrão: 853
+        Explicação: O DNS sobre TLS é um protocolo que permite que as consultas DNS sejam feitas através do protocolo TLS (Transport Layer Security), garantindo assim maior privacidade e segurança. Ele utiliza a porta 853 para comunicações DoT.
+    8. HTTP (Hypertext Transfer Protocol):
+        Porta Padrão: 80
+        Explicação: O HTTP é o protocolo padrão utilizado para transferência de dados na web. A porta 80 é reservada para comunicações HTTP não criptografadas. Porém, em muitos casos, as aplicações web modernas preferem usar a porta 443 para HTTPS (HTTP Secure) para garantir a segurança da comunicação.
+    9. HTTPS (HTTP Secure):
+        Porta Padrão: 443
+        Explicação: O HTTPS é a versão segura do protocolo HTTP, que utiliza criptografia SSL/TLS para proteger a comunicação entre o cliente e o servidor. A porta 443 é utilizada para comunicações HTTPS criptografadas.
+    10. FTP (File Transfer Protocol):
+        Porta Padrão: 21
+        Explicação: O FTP é um protocolo utilizado para transferência de arquivos entre um cliente e um servidor. A porta 21 é a porta padrão para controle de conexão, onde os comandos de controle são trocados entre o cliente e o servidor.
+    11. SSH (Secure Shell):
+        Porta Padrão: 22
+        Explicação: O SSH é um protocolo de rede utilizado para acessar e gerenciar remotamente servidores e dispositivos de rede de forma segura. A porta 22 é a porta padrão para conexões SSH.
+    12. SMTP (Simple Mail Transfer Protocol):
+        Porta Padrão: 25
+        Explicação: O SMTP é um protocolo utilizado para envio de e-mails. A porta 25 é a porta padrão para comunicação entre servidores de e-mail para transferência de mensagens de e-mail.
+    13. DNS (Domain Name System):
+        Porta Padrão: 53
+        Explicação: O DNS é um sistema utilizado para tradução de nomes de domínio em endereços IP e vice-versa. A porta 53 é a porta padrão para comunicação entre clientes DNS e servidores DNS.
+    14. MySQL:
+        Porta Padrão: 3306
+        Explicação: O MySQL é um sistema de gerenciamento de banco de dados relacional. A porta 3306 é a porta padrão para comunicação com servidores MySQL.
+    15. PostgreSQL:
+        Porta Padrão: 5432
+        Explicação: O PostgreSQL é outro sistema de gerenciamento de banco de dados relacional. A porta 5432 é a porta padrão para comunicação com servidores PostgreSQL.
+
+    Essas são apenas algumas das portas padrão mais comuns. É importante observar que essas portas podem ser alteradas nas configurações dos aplicativos para atender às necessidades específicas de cada ambiente.
+
+    ### Metodos HTTP
+
+    1. GET: Usado para solicitar dados de um recurso específico no servidor. É um método seguro e não deve alterar o estado do servidor. Normalmente utilizado para buscar informações.
+
+    2. POST: Utilizado para enviar dados ao servidor para serem processados. É frequentemente utilizado para criar novos recursos no servidor.
+
+    3. PUT: Utilizado para atualizar um recurso específico no servidor com os dados fornecidos na requisição. Geralmente, é utilizado para realizar atualizações completas de um recurso.
+
+    4. PATCH: Similar ao PUT, mas utilizado para realizar atualizações parciais em um recurso, fornecendo apenas os campos que devem ser atualizados.
+
+    5. DELETE: Utilizado para remover um recurso específico no servidor. Indica que o cliente deseja excluir o recurso especificado.
+
+    6. HEAD: Similar ao GET, mas utilizado para obter apenas os cabeçalhos de resposta da requisição, sem o corpo da resposta. É útil para verificar informações sobre o recurso sem recuperar todo o conteúdo.
+
+    7. OPTIONS: Utilizado para obter informações sobre os métodos HTTP suportados pelo servidor para um recurso específico. Também pode ser utilizado para verificar as opções de comunicação disponíveis.
+
+    Esses são alguns dos métodos HTTP mais comuns e amplamente utilizados na comunicação entre cliente e servidor na web. Cada método possui um propósito específico e deve ser utilizado de acordo com as necessidades da aplicação e os padrões de design RESTful.
+
+    ### Status Code
+
+    Os códigos de status HTTP são retornados pelo servidor para indicar o resultado da solicitação feita pelo cliente. Eles fornecem informações sobre o sucesso ou falha da solicitação e são divididos em cinco categorias principais, cada uma representando uma classe de resposta:
+
+    - 1xx - Informacional: Esses códigos indicam que a solicitação foi recebida e está sendo processada. Eles geralmente informam ao cliente que mais ações são necessárias antes que a solicitação possa ser concluída.
+
+    - 2xx - Sucesso: Esses códigos indicam que a solicitação foi recebida, entendida e aceita com sucesso pelo servidor. Eles geralmente indicam que a operação foi bem-sucedida.
+
+    - 3xx - Redirecionamento: Esses códigos indicam que a solicitação foi recebida, mas o cliente deve realizar uma ação adicional para completar a solicitação. Geralmente são utilizados para redirecionar o cliente para outra URL.
+
+    - 4xx - Erro do Cliente: Esses códigos indicam que ocorreu um erro por parte do cliente, como uma solicitação inválida, ausência de autorização ou recurso não encontrado. Eles geralmente requerem ação por parte do cliente para corrigir o problema.
+
+    - 5xx - Erro do Servidor: Esses códigos indicam que ocorreu um erro por parte do servidor ao processar a solicitação. Isso pode acontecer devido a um erro interno do servidor, sobrecarga ou falha temporária. Geralmente, não requerem ação por parte do cliente e podem ser corrigidos pelo administrador do servidor.
+
+    *Alguns exemplos comuns de códigos de status HTTP incluem:*
+
+    200 OK: Indica que a solicitação foi bem-sucedida.
+    404 Not Found: Indica que o recurso solicitado não foi encontrado no servidor.
+    500 Internal Server Error: Indica que ocorreu um erro interno no servidor ao processar a solicitação.
+    Esses códigos de status são uma parte importante da comunicação entre cliente e servidor na web, fornecendo informações úteis sobre o resultado das solicitações e ajudando os desenvolvedores a diagnosticar e corrigir problemas em suas aplicações.
+
+    
