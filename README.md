@@ -170,4 +170,4 @@ Primeiramente vamos estudar **arquitetura REST**
     
     Esses códigos de status são uma parte importante da comunicação entre cliente e servidor na web, fornecendo informações úteis sobre o resultado das solicitações e ajudando os desenvolvedores a diagnosticar e corrigir problemas em suas aplicações.
 
-
+## ...
