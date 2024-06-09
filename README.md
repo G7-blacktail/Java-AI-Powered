@@ -264,8 +264,21 @@ Os mapeamentos em JPA são:
     Herança
     Persistência
 
+### Spring Data JPA
 
+A partir daqui iremos abordar a nova implementação de JPA com os recursos que o SpringFramework nos disponibiliza, deixando a interação com o banco de forma mais simples, sem repetição de código ou até mesmo evitando a declaração de várias linhas de código.
 
+A partir do uso de herança de interfaces e metodos podemos agora ter uma interação mais intuitiva com o banco.
 
+Aqui vou listar as interfaces e anotações que são mais importantes de explorar (também são as que mais eu utilizo atualmente):
 
+    inteface :
 
+        CrudRepository
+        JpaRepository
+        PagingAndSortingRepository
+
+    Anotações:
+
+        @Query
+        @Param
