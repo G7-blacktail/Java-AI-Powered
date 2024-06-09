@@ -1,15 +1,13 @@
-package dio.springboot;
-
-import dio.springboot.Calculadora;
+package com.sistema.mensagem.dio.sistemamensagem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrimeirosPassosApplication {
+public class SistemamensagemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PrimeirosPassosApplication.class, args);
+		SpringApplication.run(SistemamensagemApplication.class, args);
 	}
 
 }

@@ -170,4 +170,102 @@ Primeiramente vamos estudar **arquitetura REST**
     
     Esses códigos de status são uma parte importante da comunicação entre cliente e servidor na web, fornecendo informações úteis sobre o resultado das solicitações e ajudando os desenvolvedores a diagnosticar e corrigir problemas em suas aplicações.
 
-## ...
+## Imersão no Spring Framework com Spring Boot
+
+Neste primeiro momento passamos por uma explicação sobre os Startes mais famosos do Spring Boot.
+
+O Starters é um descritor de dependência, acredito que seja o que vem escrito no POM do projeto.
+
+OS benefícios dos starters são:
+
+    coesão
+    versão compativél
+    otimização do tempo
+    configuração simples
+    Foco no negócio
+
+OS Starters mais usados:
+
+    data-jpa: Integração ao banco de dados via JPA - Hibernate 
+    data-mongodb: Interação com o banco de dados MongoDB
+    web: Inclusão do container Tomcat para aplicações REST
+    web-services: WebServices baseados na arquitetura SOAP
+    batch: Implementação de JOBs de processos
+    openfeing: Cliente HTTP baseado em interfaces 
+    actuator: Gerenciador de monitoramento da aplicação
+
+aqui alguns links para saber mais :
+
+https://www.fusion-reactor.com/blog/the-difference-between-spring-framework-vs-spring-boot/
+
+https://dev.to/eduwyre/settling-spring-vs-spring-boot-debate-8ek 
+
+https://www.reply.com/solidsoft-reply/en/content/webservices-soap-and-rest-a-simple-introduction 
+
+https://www.geeksforgeeks.org/difference-between-spring-and-spring-boot/ 
+
+### Primeiros Passos
+
+Aqui criamos um projeto Demo e outro projeto "primeiros-passos" utilizando o springinitialz sem nenhum starter e foi mostrado o uso do autowired para não instanciar a classe calculadora de forma que se mantenha a injeção de dependências.
+
+### Bean VS Component
+
+Podemos dizer para simplificar que @bean é quando queremos construir ou implementar códigos externos à nossa aplicação e @Component quanto é um conjunto de código que temos acesso e faz parte do nosso código.
+
+### Scope
+
+Singleton e prototype
+
+"Quantos irei precisar?" 
+
+Sem daclarar o scope o tipo será singleton ou seja, será instanciado apenas uma vez o objeto sem levar em conta a necessidade da aplicação.
+
+Ao usar o @Scope("prototype") declaramos que a partir do escaneamento da aplicação será construido quantos objetos forem necessários do mesmo, modificando o comportamento da aplicação com base na necessidade.
+
+Para este será necessário mais estudo e aprofundamento.
+
+### Proprieties Value
+
+"Nem tudo é = (igual)"
+
+Nem todas as necessidades da aplicação precisam estar explicitamente declarada dentro da aplicação. Essas informações são centralizadas dentro da "application.proprieties". Isso quer dizer que ao declarar dentro das propriedades da aplicação garantimos que a informação lá contida não será modificada durante a utilização da aplicação pelo usuário.
+
+@value: Podemos declarar valores padrões salvos no proprieties e utilizar de forma interativa.
+
+No exemplo declaramos 3 valores padrões: nome, email e telefone;
+
+Podemos delcarar como uma propriedade da seguinte forma: 
+
+@Value(${nome}) para buscar o valor de nome do proprieties ou podemos também passar valores padrões caso não seja possível encontrar, como por exemplo: @Value(${name:<algum valor padrão>})
+
+### Configuretion proprieties
+
+aplication.proprieties
+@ConfigurationProprieties (prefix = <nome>)
+
+com essa injeção podemos definir valores padrões também assim como o value porém de forma que não precisamos declarar diretamente dentro da aplicação e sim definindo um objeto de "configuração" para tratar estes valores.
+
+### Conceito de ORM e JPA
+
+    ORM: Object-Relacional Mapping, em português, mapeamento objeto relacional, é um recurso para aproximar o paradigma da orientação a objetos ao contexto de banco de dados relacional.
+
+    O uso de ORM é realizado através do mapeamento de objeto para uma tabela por uma biblioteca ou framework
+
+    geralmente era feito o mapeamento via XML.
+
+
+    JPA: É uma especificação baseada em interfaces, que através de um framework realiza operações de persistência de objetos Java.
+
+Os mapeamentos em JPA são:
+
+    Identificação
+    Definição
+    Relacionamento
+    Herança
+    Persistência
+
+
+
+
+
+

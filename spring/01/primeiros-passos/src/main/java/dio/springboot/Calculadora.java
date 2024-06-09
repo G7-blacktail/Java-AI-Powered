@@ -1,4 +1,4 @@
-package main.java.dio.springboot;
+package dio.springboot;
 
 import org.springframework.stereotype.Component;
 
