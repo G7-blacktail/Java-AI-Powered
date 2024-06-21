@@ -1,4 +1,4 @@
-package com.aula.spring.data.jpa.aulaspring.model;
+package com.aula.spring.data.jpa.aulaspring.jpa.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

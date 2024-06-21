@@ -1,10 +1,10 @@
-package com.aula.spring.data.jpa.aulaspring.repository;
+package com.aula.spring.data.jpa.aulaspring.jpa.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.aula.spring.data.jpa.aulaspring.model.User;
+import com.aula.spring.data.jpa.aulaspring.jpa.entity.User;
 
 import java.util.List;
 

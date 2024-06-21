@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.aula.spring.data.jpa.aulaspring.model.User;
-import com.aula.spring.data.jpa.aulaspring.repository.UserJpaRepository;
+import com.aula.spring.data.jpa.aulaspring.jpa.entity.User;
+import com.aula.spring.data.jpa.aulaspring.jpa.repository.UserJpaRepository;
 
 import java.util.List;
 import java.util.Scanner;

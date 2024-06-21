@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @RestController
-public class UserResource {
-
+public class WelcomeController {
+    
     @GetMapping("/welcome")
     public String welcome() {
         return "Bem vindo ao spring boot rest API";
