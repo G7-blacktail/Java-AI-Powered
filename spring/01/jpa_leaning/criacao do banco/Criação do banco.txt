@@ -1,0 +1,8 @@
+Para criar o banco de dados tudo foi feito utilizando o HeidiSQL e o MariaDB.
+
+No HeidiSQL criei uma pasta "test" e uma sessão chamada "contabil" passando os seguintes paramentros: 
+	ip: 127.0.0.1
+	usuario e senha: root
+	porta: 3306
+
+todo o resto está no SQL e no print da tela para recordar

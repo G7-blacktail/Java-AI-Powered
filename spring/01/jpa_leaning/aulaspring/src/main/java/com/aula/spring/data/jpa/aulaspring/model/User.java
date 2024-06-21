@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "tb_user")
 public class User {
 
     @Id
@@ -15,13 +17,13 @@ public class User {
     
     private Integer id;
 
-    @Column(length = 50, nullable = false)
+    @Column(name = "user_name", length = 50, nullable = false)
     private String name;
 
-    @Column(length = 20, nullable = false)
+    @Column(name = "nm_user", length = 20, nullable = false)
     private String userName;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "user_password", length = 100, nullable = false)
     private String password;
 
     public String getName(){
