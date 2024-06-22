@@ -14,14 +14,15 @@ public class AppStarter implements CommandLineRunner {
     private UserJpaRepository userJpaRepository;
 
     @Override
-    public void run(String... args){
+    public void run(String... args) throws Exception {
 
         User user = new User();
         user.setName("Gustavo");
         user.setUserName("G.7");
         user.setPassword("Blacktailwins1234");
+        user.setRoles(null);
 
-        userJpaRepository.save(user);
+        this.userJpaRepository.save(user);
 
         for (User u : userJpaRepository.findAll()){
             System.out.println(u);

@@ -282,3 +282,5 @@ Aqui vou listar as interfaces e anotações que são mais importantes de explora
 
         @Query
         @Param
+
+todos esses dados foram tirados do seguinte site: https://glysns.gitbook.io/spring-framework 
