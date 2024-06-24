@@ -15,13 +15,13 @@ import java.util.HashSet;
 import java.util.Set;
 @Service
 public class SecurityDatabaseService  implements UserDetailsService {
-    
+
     @Autowired
     private UserJpaRepository userJpaRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        User userEntity = userJpaRepository.findByUsername(username);
+        User userEntity = userJpaRepository.findByUsernameNew(username);
         if (userEntity == null) {
             throw new UsernameNotFoundException(username);
         }

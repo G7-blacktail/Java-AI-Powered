@@ -44,7 +44,7 @@ public class AppStarter implements CommandLineRunner {
     @Transactional
     @Override
     public void run(String... args) throws Exception {
-        User user = userJpaRepository.findByUsername("admin");
+        User user = userJpaRepository.findByUsernameNew("admin");
         if(user==null){
             user = new User();
             user.setName("ADMIN");
@@ -54,7 +54,7 @@ public class AppStarter implements CommandLineRunner {
 
             userJpaRepository.save(user);
         }
-        user = userJpaRepository.findByUsername("user");
+        user = userJpaRepository.findByUsernameNew("user");
         if(user ==null){
             user = new User();
             user.setName("USER");

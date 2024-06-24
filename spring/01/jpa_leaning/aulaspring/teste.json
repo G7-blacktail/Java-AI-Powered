@@ -1,0 +1,57 @@
+[
+    "User",
+    {
+        "id" : "1", 
+        "name" : "Gustavo",
+        "userName" : "'G.7'",
+        "PASSWORD" : "'Blacktailwins1234'"
+    },
+    
+    "User",
+    {
+        "id" : 2,
+        "name" : "'Gustavo'",
+        "userName" : "'G.7'",
+        "PASSWORD" : "'Blacktailwins1234'"
+    },
+    
+    "User",
+    {
+        "id" : 3,
+        "name" : "'Gleyson Sampaio'",
+        "userName" : "'Glesys'",
+        "PASSWORD" : "'123456'"
+    },
+    
+    "User",
+    {
+        "id": 4,
+        "name" : "'Marcelo Odebrech'",
+        "userName" : "'corrupto'",
+        "PASSWORD" : "'171'"
+    },
+    
+    "User",
+    {
+        "id": 5,
+        "name" : "'Fabio Assucao'",
+        "userName" : "'Cheirador'",
+        "PASSWORD" : "'po'"
+    },
+    
+    "User",
+    {
+        "id": 10,
+        "name" : "'ADMIN'",
+        "userName" : "'admin'",
+        "PASSWORD" : "'master123'"
+    },
+    
+    "User",
+    {
+        "id": 11,
+        "name" : "'USER'",
+        "userName" : "'user'",
+        "PASSWORD" : "'user123'"
+    }
+]
