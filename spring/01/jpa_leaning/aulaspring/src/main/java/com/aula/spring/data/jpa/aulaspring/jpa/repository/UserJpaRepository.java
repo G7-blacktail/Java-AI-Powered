@@ -10,14 +10,17 @@ import java.util.List;
 
 public interface UserJpaRepository extends JpaRepository<User, Integer> {
 
-    //Query Method
-    List<User> findByNameContaining(String name);
+    // //Query Method
+    // List<User> findByNameContaining(String name);
 
-    //Query Method
-    User findByUserName(String userName);
+    // //Query Method
+    // User findByUserName(String userName);
 
-    //Query Override
-    @Query("SELECT u FROM User u WHERE u.name LIKE %:name%")
-    List<User> filtrarPorNome(@Param("name") String name);
+    // //Query Override
+    // @Query("SELECT u FROM User u WHERE u.name LIKE %:name%")
+    // List<User> filtrarPorNome(@Param("name") String name);
+
+        @Query("SELECT e FROM User e JOIN FETCH e.roles WHERE e.userName= (:username)")
+        public User findByUsername(@Param ("username") String username);
     
 }
