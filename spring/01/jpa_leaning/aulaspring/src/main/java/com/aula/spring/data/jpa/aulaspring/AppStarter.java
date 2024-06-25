@@ -26,24 +26,13 @@ public class AppStarter implements CommandLineRunner {
     //     }
     // }
 
-    // private void insertUser(){
-    //     User user = new User();
-    //     Scanner entrada = new Scanner(System.in);
-    //     user.setName(entrada.nextLine());
-    //     user.setUserName(entrada.nextLine());
-    //     user.setPassword(entrada.nextLine());
-    //     entrada.close();
 
-    //     userJpaRepository.save(user);
-
-    //         for(User u : userJpaRepository.findAll()) {
-    //             System.out.println(u);
-    //         }
-    // }
 
     @Transactional
     @Override
     public void run(String... args) throws Exception {
+        String newUser = "n";
+
         User user = userJpaRepository.findByUsernameNew("admin");
         if(user==null){
             user = new User();
@@ -63,8 +52,31 @@ public class AppStarter implements CommandLineRunner {
             user.getRoles().add("USERS");
             userJpaRepository.save(user);
         }
+        Scanner verification = new Scanner(System.in);
+        newUser = verification.next();
+        if(newUser.equalsIgnoreCase("s")){
+            insertUser();
+        } else{
+            verification.close();
+        }
 
         System.out.println(userJpaRepository.findAll());
+    }
+
+    private void insertUser(){
+        User user = new User();
+        Scanner entrada = new Scanner(System.in);
+        user.setName(entrada.nextLine());
+        user.setUserName(entrada.nextLine());
+        user.setPassword(entrada.nextLine());
+        user.getRoles().add(entrada.nextLine());
+        entrada.close();
+
+        userJpaRepository.save(user);
+
+            for(User u : userJpaRepository.findAll()) {
+                System.out.println(u);
+            }
     }
 
 }
