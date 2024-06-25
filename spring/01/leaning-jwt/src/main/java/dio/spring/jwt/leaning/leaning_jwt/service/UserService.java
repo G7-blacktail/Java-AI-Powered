@@ -14,7 +14,7 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    @Autowired
+    //Por algum motivo o encoder só funcinou sem o a injeção Autowired
     private PasswordEncoder encoder;
 
     public void createUser(User user){
