@@ -42,8 +42,12 @@ public class JWTObject {
         this.expiration = expiration;
     }
 
-    public List<String> getRoles(){
+    public List<String> getRoles() {
         return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 
     public void setRoles(String... roles){
