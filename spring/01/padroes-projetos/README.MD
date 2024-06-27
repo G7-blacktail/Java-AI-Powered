@@ -1,0 +1,1 @@
+# Neste campo irei armazenar o treino sobre Design Patterns
