@@ -5,40 +5,32 @@ import java.util.Date;
 import java.util.List;
 
 public class JWTObject {
-
     private String subject; //nome do usuario
-
     private Date issuedAt; //data de criação do token
-
     private Date expiration; // data de expiração do token
-
     private List<String> roles; //perfis de acesso
 
-    public JWTObject() {
-        //
-    }
-    
-    public String getSubject(){
-        return this.subject;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setSubject(final String subject){
+    public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public Date getIssuedAt(){
-        return this.issuedAt;
+    public Date getIssuedAt() {
+        return issuedAt;
     }
 
-    public void setIssuedAt(final Date issuedAt){
+    public void setIssuedAt(Date issuedAt) {
         this.issuedAt = issuedAt;
     }
 
-    public Date getExpiration(){
-        return this.expiration;
+    public Date getExpiration() {
+        return expiration;
     }
 
-    public void setExpiration(final Date expiration){
+    public void setExpiration(Date expiration) {
         this.expiration = expiration;
     }
 

@@ -10,19 +10,14 @@ import dio.spring.jwt.leaning.leaning_jwt.repository.UserRepository;
 
 @Service
 public class UserService {
-
     @Autowired
     private UserRepository repository;
-
-    //Por algum motivo o encoder só funcinou sem o a injeção Autowired
     @Autowired
     private PasswordEncoder encoder;
-
     public void createUser(User user){
         String pass = user.getPassword();
-        // criptografando antes de salvar no banco
+        //criptografando antes de salvar no banco
         user.setPassword(encoder.encode(pass));
         repository.save(user);
     }
-    
 }
