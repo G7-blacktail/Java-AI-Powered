@@ -19,11 +19,49 @@ class User implements Observer {
 
     @Override
     public void update(String productName) {
-        System.out.println("Notificacao recebida : Novo produto adicionado - " + productName);
+        System.out.println("Notificacao recebida: Novo produto adicionado - " + productName);
     }
 
     public String getName() {
         return name;
+    }
+}
+
+// model para produto
+class Product {
+
+    private String productName;
+
+    private String productType;
+
+    private String productValue;
+
+    public Product() {
+        //
+    }
+
+    public String getProductName() {
+        return this.productName;
+    }
+
+    public void setProductName(String productName){
+        this.productName = productName;
+    }
+
+    public String getProductType() {
+        return this.productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
+    }
+
+    public String getProductValue() {
+        return this.productValue;
+    }
+
+    public void setProductValue(String productValue){
+        this.productValue = productValue;
     }
 }
 
@@ -37,9 +75,7 @@ interface Subject {
 // Classe ProductCatalog que implementa Subject
 class ProductCatalog implements Subject {
     private List<Observer> observers;
-    private List<String> products;
-    private String productType;
-    private String productValue;
+    private List<Product> products;
 
     public ProductCatalog() {
         observers = new ArrayList<>();
@@ -62,27 +98,10 @@ class ProductCatalog implements Subject {
             observer.update(productName);
         }
     }
-      public String getProductType(){
-        return this.productType;
-      }
-      
-      public void setProductType(String produtcType) {
-        this.productType = produtcType;
-      }
-      
-      public String getProductValue() {
-        return this.productValue;
-      }
-      
-      public void setProductValue(String produtcValue) {
-        this.productValue = produtcValue;
-      }
 
-    public void addProduct(String productName, String produtcType, String produtcValue) {
-        products.add(productName);
-        products.add(productType);
-        products.add(produtcValue);
-        notifyObservers(productName);
+    public void addProduct(Product product) {
+        products.add(product);
+        notifyObservers(product.getProductName());
     }
 }
 
@@ -90,35 +109,30 @@ class ProductCatalog implements Subject {
 public class Main {
     public static void main(String[] args) {
         ProductCatalog productCatalog = new ProductCatalog();
-        Scanner scanner = new Scanner(System.in);
         List<User> users = new ArrayList<>();
-        String userName = scanner.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        Product product = new Product();
+        String userName = "Gustavo Fernandes";
+        User user = new User(userName);
+        users.add(user);
+        productCatalog.addObserver(user);
+ 
 
         while (true) {
+                product.setProductName(scanner.nextLine());
+                product.setProductType(scanner.nextLine());
+                product.setProductValue(scanner.nextLine());
+                String continueProgram = scanner.nextLine();
 
-            User user = new User(userName);
-            users.add(user);
 
-            // String action = scanner.nextLine();
-
-            // if (action.equalsIgnoreCase("cancelar")) {
-            //     productCatalog.removeObserver(user);
-            // } else {
-                productCatalog.addObserver(user);
-                String productName = scanner.nextLine();
-                String produtcType = scanner.nextLine();
-                String produtcValue = scanner.nextLine();
-                productCatalog.addProduct(productName, produtcType, produtcValue);
-            // }
-
-            String continueProgram = scanner.nextLine();
-
-            if (continueProgram.equalsIgnoreCase("N")) {
+                if (continueProgram.equalsIgnoreCase("N")) {
                 System.out.println("Programa Encerrado.");
                 break;
+            } else {
+                productCatalog.addProduct(product);
             }
         }
-
+    
         scanner.close();
     }
 }
