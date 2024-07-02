@@ -12,8 +12,9 @@ import src.singleton.SingletonLazyHolder;
 public class Teste {
     public static void main(String[] args) {
         // Testes relacionados ao design patterns Singleton
+
         SingletonLazy lazy = SingletonLazy.getInstancia();
-        System.out.println("\n---------------------Testes -------------------------\n");
+        System.out.println("\n---------------------Testes Singleton-------------------------\n");
         System.out.println(lazy);
         lazy = SingletonLazy.getInstancia();
         System.out.println(lazy);
@@ -34,6 +35,8 @@ public class Teste {
         Comportamento defensivo = new ComportamentoDefensivo();
         Comportamento agressivo = new ComportamentoAgressivo();
 
+        System.out.println("\n---------------------Testes Strategy-------------------------\n");
+
         Robo robo = new Robo();
         robo.setComportamento(normal);
         robo.mover();
@@ -43,5 +46,7 @@ public class Teste {
         robo.mover();
         robo.setComportamento(defensivo);
         robo.mover();
+
+        System.out.println("\n---------------------Testes Facede-------------------------\n");
     }
 }
