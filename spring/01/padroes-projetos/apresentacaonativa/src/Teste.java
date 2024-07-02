@@ -5,6 +5,7 @@ import src.strategy.ComportamentoAgressivo;
 import src.strategy.ComportamentoDefensivo;
 import src.strategy.ComportamentoNormal;
 import src.strategy.Robo;
+import src.facade.Facade;
 import src.singleton.SingletonEager;
 import src.singleton.SingletonLazy;
 import src.singleton.SingletonLazyHolder;
@@ -47,6 +48,12 @@ public class Teste {
         robo.setComportamento(defensivo);
         robo.mover();
 
+        // Testes referentes ao FACADE
+
         System.out.println("\n---------------------Testes Facede-------------------------\n");
+
+        Facade facade = new Facade();
+        facade.migrarCliente("Gustavo", "72465420");
+
     }
 }
