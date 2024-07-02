@@ -1,4 +1,4 @@
-
+package src.singleton;
 /*
  *  Singleton "pregiçoso".
  * 

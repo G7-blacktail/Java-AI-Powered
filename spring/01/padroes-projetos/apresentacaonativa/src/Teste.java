@@ -1,12 +1,18 @@
+package src;
 
-
-import apresentacao_nativa.singleton.*;
-import apresentacao_nativa.strategy.*;
+import src.strategy.Comportamento;
+import src.strategy.ComportamentoAgressivo;
+import src.strategy.ComportamentoDefensivo;
+import src.strategy.ComportamentoNormal;
+import src.strategy.Robo;
+import src.singleton.SingletonEager;
+import src.singleton.SingletonLazy;
+import src.singleton.SingletonLazyHolder;
 
 public class Teste {
     public static void main(String[] args) {
         // Testes relacionados ao design patterns Singleton
-        SingletonLazy lazy = new SingletonLazy();
+        SingletonLazy lazy = SingletonLazy.getInstancia();
         System.out.println("\n---------------------Testes -------------------------\n");
         System.out.println(lazy);
         lazy = SingletonLazy.getInstancia();
@@ -31,6 +37,11 @@ public class Teste {
         Robo robo = new Robo();
         robo.setComportamento(normal);
         robo.mover();
+        robo.mover();
+        robo.setComportamento(agressivo);
+        robo.mover();
+        robo.mover();
+        robo.setComportamento(defensivo);
         robo.mover();
     }
 }

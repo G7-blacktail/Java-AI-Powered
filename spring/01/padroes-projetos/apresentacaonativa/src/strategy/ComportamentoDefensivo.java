@@ -1,4 +1,4 @@
-package apresentacao.nativa.strategy;
+package src.strategy;
 
 public class ComportamentoDefensivo implements Comportamento {
 
