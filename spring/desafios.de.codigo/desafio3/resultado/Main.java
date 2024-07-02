@@ -9,7 +9,7 @@ interface Observer {
     void update(String productName);
 }
 
-// Classe User que implementa Observer
+// Classe concreta Observer
 class User implements Observer {
     private String name;
 
@@ -19,30 +19,20 @@ class User implements Observer {
 
     @Override
     public void update(String productName) {
-        System.out.println("Notificacao recebida : Novo produto adicionado - " + productName);
-    }
-
-    public String getName() {
-        return name;
+        System.out.println("Notificacao recebida: Novo produto adicionado - " + productName);
     }
 }
 
-// Interface Subject
-interface Subject {
+// Interface Observable
+interface CatalogObservable {
     void addObserver(Observer observer);
     void removeObserver(Observer observer);
     void notifyObservers(String productName);
 }
 
-// Classe ProductCatalog que implementa Subject
-class ProductCatalog implements Subject {
-    private List<Observer> observers;
-    private List<String> products;
-
-    public ProductCatalog() {
-        observers = new ArrayList<>();
-        products = new ArrayList<>();
-    }
+// Classe concreta Observable
+class Catalog implements CatalogObservable {
+    private List<Observer> observers = new ArrayList<>();
 
     @Override
     public void addObserver(Observer observer) {
@@ -52,54 +42,48 @@ class ProductCatalog implements Subject {
     @Override
     public void removeObserver(Observer observer) {
         observers.remove(observer);
-        System.out.println(((User) observer).getName() + " cancelou a assinatura.");
     }
 
+  
     @Override
     public void notifyObservers(String productName) {
-        for (Observer observer : observers) {
-            observer.update(productName);
-        }
+        // TODO: Implementar lógica para notificar apenas os usuários que desejam ser notificados
+        System.out.println("Notificacao recebida: Novo produto adicionado - " + productName);
     }
 
-    public void addProduct(String productName) {
-        products.add(productName);
-        notifyObservers(productName);
+    public void addProduct(String name, String description, double price) {
+        notifyObservers(name);
     }
 }
 
-// Programa Principal
 public class Main {
     public static void main(String[] args) {
-        ProductCatalog productCatalog = new ProductCatalog();
         Scanner scanner = new Scanner(System.in);
-        List<User> users = new ArrayList<>();
 
-        while (true) {
-            String userName = scanner.nextLine();
+        // Criando catálogo e usuário
+        Catalog catalog = new Catalog();
+        User user = new User("Usuário 1");
 
-            User user = new User(userName);
-            users.add(user);
+        // Inscricao do usuário no catálogo
+        catalog.addObserver(user);
 
-            String action = scanner.nextLine();
+        // Adicionando novo produto
+        String name = scanner.nextLine();
+        String description = scanner.nextLine();
+        double price = scanner.nextDouble();
 
-            if (action.equalsIgnoreCase("cancelar")) {
-                productCatalog.removeObserver(user);
-            } else {
-                productCatalog.addObserver(user);
-                String productName = scanner.nextLine();
-                productCatalog.addProduct(productName);
-            }
+        scanner.nextLine(); // Consumir a quebra de linha após nextDouble
+        String subscribeChoice = scanner.nextLine();
 
-            String continueProgram = scanner.nextLine();
-
-            if (continueProgram.equalsIgnoreCase("N")) {
+        // TODO: Verifique qual foi a escolha de notificação (S ou N) do usuário
+                if (subscribeChoice.equalsIgnoreCase("N")) {
                 System.out.println("Programa Encerrado.");
-                break;
+            } else {
+                catalog.addProduct(name, description, price);
             }
-        }
 
+    
         scanner.close();
+
     }
 }
-

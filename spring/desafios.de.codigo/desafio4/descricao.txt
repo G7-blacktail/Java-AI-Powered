@@ -1,0 +1,2 @@
+Desafios de Código Java Intermediários: Design Patterns
+4 / 5 - Implementando um Carrinho de Compras com Padrão Strategy
