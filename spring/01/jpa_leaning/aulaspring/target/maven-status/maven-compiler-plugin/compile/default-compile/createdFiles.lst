@@ -1,0 +1,14 @@
+com\aula\spring\data\jpa\aulaspring\config\SwaggerConfig.class
+com\aula\spring\data\jpa\aulaspring\handler\ResponseError.class
+com\aula\spring\data\jpa\aulaspring\jpa\repository\UserRepository.class
+com\aula\spring\data\jpa\aulaspring\AulaspringApplication.class
+com\aula\spring\data\jpa\aulaspring\WebSecurityConfig.class
+com\aula\spring\data\jpa\aulaspring\model\Usuario.class
+com\aula\spring\data\jpa\aulaspring\handler\GlobalExceptionHandler.class
+com\aula\spring\data\jpa\aulaspring\AppStarter.class
+com\aula\spring\data\jpa\aulaspring\controller\WelcomeController.class
+com\aula\spring\data\jpa\aulaspring\jpa\repository\UserJpaRepository.class
+com\aula\spring\data\jpa\aulaspring\controller\UsuarioController.class
+com\aula\spring\data\jpa\aulaspring\handler\BusinessException.class
+com\aula\spring\data\jpa\aulaspring\jpa\entity\User.class
+com\aula\spring\data\jpa\aulaspring\handler\CampoObrigatorioException.class
